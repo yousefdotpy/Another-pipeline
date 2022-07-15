@@ -1,21 +1,20 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: DevOps cloud nanodegree CI/CD
+Description: ND9991 C3 L4 
 Resources:
-  Ec2Instance:
+  EC2Instance:
     Type: 'AWS::EC2::Instance'
     Properties:
       SecurityGroups:
         - !Ref InstanceSecurityGroup
-      KeyName: yousefdotpy
-      ImageId: 'ami-052efd3df9dad4825'
+      KeyName: AWS_Keypair_ND9991
+      ImageId: 'ami-09e67e426f25ce0d7' 
       InstanceType: t3.micro
   InstanceSecurityGroup:
     Type: 'AWS::EC2::SecurityGroup'
     Properties:
-      GroupDescription: Enabling SSH access through port 22
+      GroupDescription: Enable SSH access via port 22
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: '22'
           ToPort: '22'
           CidrIp: 0.0.0.0/0
-      
