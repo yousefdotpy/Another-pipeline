@@ -4,7 +4,7 @@ Resources:
   Ec2Instance:
     Type: 'AWS::EC2::Instance'
     Properties:
-      SecurityGroup:
+      SecurityGroups:
         - !Ref InstanceSecurityGroup
       KeyName: yousefdotpy
       ImageId: 'ami-052efd3df9dad4825'
