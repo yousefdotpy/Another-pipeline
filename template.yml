@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: DevOps cloud nanodegree CI/CD
+Resources:
+  Ec2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      SecurityGroup:
+        - !Ref InstanceSecurityGroup
+      KeyName: yousefdotpy
+      ImageId: 'ami-0a729bdc1acf7528b'
+      InstanceType: t3.micro
+  InstanceSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Enabling SSH access through port 22
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp: 0.0.0.0/0
+      
