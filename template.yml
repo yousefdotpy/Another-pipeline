@@ -7,7 +7,7 @@ Resources:
       SecurityGroup:
         - !Ref InstanceSecurityGroup
       KeyName: yousefdotpy
-      ImageId: 'ami-0a729bdc1acf7528b'
+      ImageId: 'ami-052efd3df9dad4825'
       InstanceType: t3.micro
   InstanceSecurityGroup:
     Type: 'AWS::EC2::SecurityGroup'
